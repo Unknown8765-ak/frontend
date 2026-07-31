@@ -1,62 +1,35 @@
 const CategorySelect = ({
-    value,
-    onChange,
+  value,
+  onChange,
 }) => {
+  return (
+    <div>
+      <label className="mb-2 block font-semibold">
+        Category
+      </label>
 
-    const categories = [
-        "Solar",
-        "CCTV",
-        "Electrical",
-    ];
-
-    return (
-
-        <div>
-
-            <label className="mb-2 block font-semibold">
-                Category
-            </label>
-
-            <select
-                name="category"
-                value={value}
-                onChange={onChange}
-                className="
-                    w-full
-                    rounded-xl
-                    border
-                    border-gray-300
-                    bg-white
-                    p-4
-                    outline-none
-                    transition
-                    focus:border-blue-600
-                    focus:ring-2
-                    focus:ring-blue-100
-                "
-            >
-
-                <option value="">
-                    Select Category
-                </option>
-
-                {categories.map((category) => (
-
-                    <option
-                        key={category}
-                        value={category}
-                    >
-                        {category}
-                    </option>
-
-                ))}
-
-            </select>
-
-        </div>
-
-    );
-
+      <input
+        type="text"
+        name="category"
+        value={value}
+        onChange={onChange}
+        placeholder="e.g. Solar, Aquarium, Digital Marketing"
+        className="
+          w-full
+          rounded-xl
+          border
+          border-gray-300
+          bg-white
+          p-4
+          outline-none
+          transition
+          focus:border-blue-600
+          focus:ring-2
+          focus:ring-blue-100
+        "
+      />
+    </div>
+  );
 };
 
 export default CategorySelect;

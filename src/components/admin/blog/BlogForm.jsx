@@ -100,9 +100,9 @@ const validateForm = () => {
         newErrors.content = "Content is required.";
     }
 
-    if (!formData.category) {
-        newErrors.category = "Please select a category.";
-    }
+    if (!formData.category.trim()) {
+    newErrors.category = "Category is required.";
+}
 
     if (!formData.featuredImage) {
         newErrors.featuredImage = "Featured image is required.";
@@ -141,7 +141,7 @@ const handleSubmit = async (e) => {
         data.append("title", formData.title);
         data.append("excerpt", formData.excerpt);
         data.append("content", formData.content);
-        data.append("category", formData.category);
+        data.append("category", formData.category.trim());
         data.append("tags", formData.tags.join(","));
         data.append("status", formData.status);
         data.append("metaTitle", formData.metaTitle);
@@ -210,7 +210,6 @@ const handleSubmit = async (e) => {
 
                 </div>
 
-                {/* Excerpt */}
 
                 <div>
 

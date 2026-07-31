@@ -144,13 +144,6 @@ const Blogs = () => {
                     onDelete={setDeleteBlog}
                 />
 
-                <DeleteModal
-                    open={!!deleteBlog}
-                    loading={deleteLoading}
-                    onClose={() => setDeleteBlog(null)}
-                    onDelete={handleDelete}
-                />
-
             </div>
 
         </div>
