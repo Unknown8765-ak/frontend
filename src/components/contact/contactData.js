@@ -19,14 +19,14 @@ export const contactInfo = [
     id: 2,
     icon: FaEnvelope,
     title: "Email",
-    value: "info@company.com",
-    link: "mailto:info@company.com",
+    value: "sunshadow.in@gmail.com",
+    link: "mailto:sunshadow.in@gmail.com",
   },
   {
     id: 3,
     icon: FaMapMarkerAlt,
     title: "Address",
-    value: "Lucknow, Uttar Pradesh, India",
+    value: "India",
     link: "#",
   },
   {
