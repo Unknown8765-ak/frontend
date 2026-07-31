@@ -21,9 +21,7 @@ export const createTestimonial = async (formData) => {
   }
 };
 
-// ==========================================
-// Get All Testimonials
-// ==========================================
+
 
 export const getAllTestimonials = async () => {
   try {
@@ -45,8 +43,6 @@ export const getAllTestimonials = async () => {
   }
 };
 
-// ==========================================
-// Get Single Testimonial
 // ==========================================
 
 export const getSingleTestimonial = async (id) => {

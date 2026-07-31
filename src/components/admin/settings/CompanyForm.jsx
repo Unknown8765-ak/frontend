@@ -5,6 +5,7 @@ import {
   getSettings,
   updateSettings,
 } from "../../../services/settings/settingsService";
+import toast from "react-hot-toast";
 
 const CompanyForm = () => {
  const {
@@ -35,8 +36,7 @@ const fetchSettings = async () => {
     });
   } catch (error) {
     console.log(error);
-    alert(error.message);
-  }
+toast.error(error.message);  }
 };
 
 useEffect(() => {
@@ -56,12 +56,13 @@ useEffect(() => {
 
     await updateSettings(formData);
 
-    alert("Settings Updated Successfully");
+            toast.success("Settings Updated Successfully");
+
 
     fetchSettings();
   } catch (error) {
     console.log(error);
-    alert(error.message);
+    toast.error(error.message);
   } finally {
     setLoading(false);
   }

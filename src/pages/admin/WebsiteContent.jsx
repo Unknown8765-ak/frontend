@@ -1,6 +1,6 @@
 import HeroImageCard from "../../components/admin/WebsiteContent/HeroImageCard"
-import GalleryManager from "../../components/admin/WebsiteContent/GalleryManager";
 import ProjectManager from "../../components/admin/WebsiteContent/ProjectManager";
+import CompanyImageManager from "../../components/admin/WebsiteContent/CompanyImageManager";
 
 const WebsiteContent = () => {
   return (
@@ -20,11 +20,20 @@ const WebsiteContent = () => {
         page="aquarium"
         title="Aquarium Hero Image"
       />
-      <GalleryManager />
 
       <HeroImageCard
         page="agency"
         title="Agency Hero Image"
+      />
+
+      <CompanyImageManager
+        page="home"
+        title="Home Company Image"
+      />
+
+      <CompanyImageManager
+        page="about"
+        title="About Company Image"
       />
     <ProjectManager />
 

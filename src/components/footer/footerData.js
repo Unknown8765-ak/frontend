@@ -27,11 +27,11 @@ export const quickLinks = [
     title: "Digital Agency",
     path: "/agency",
   },
-  // {
-  //   id: 5,
-  //   title: "Blog",
-  //   path: "/blog",
-  // },
+  {
+    id: 5,
+    title: "Blog",
+    path: "/blog",
+  },
   {
     id: 6,
     title: "About",

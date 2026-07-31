@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import {getDashboardData} from "../../../services/dashBoard/dashBoardSecvice"
 
@@ -14,7 +15,7 @@ const RecentLeads = () => {
       setLeads(response.data.recentLeads);
     } catch (error) {
       console.log(error);
-      alert(error.message);
+     toast.error(error.message);
     } finally {
       setLoading(false);
     }

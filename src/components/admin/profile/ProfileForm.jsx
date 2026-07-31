@@ -5,6 +5,7 @@ import {
   getProfile,
   updateProfile,
 } from "../../../services/profile/profileService";
+import toast from "react-hot-toast";
 
 const ProfileForm = () => {
   const {
@@ -26,7 +27,7 @@ const ProfileForm = () => {
       });
     } catch (error) {
       console.log(error);
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -44,13 +45,11 @@ const ProfileForm = () => {
       formData.append("email", data.email);
 
       await updateProfile(formData);
-
-      alert("Profile Updated Successfully");
-
+        toast.success("Profile Updated Successfully");
       fetchProfile();
     } catch (error) {
       console.log(error);
-      alert(error.message);
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }

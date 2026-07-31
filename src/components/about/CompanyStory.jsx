@@ -1,5 +1,11 @@
+import useWebsiteContent from "../../services/websiteContent/useWebsiteContent";
+
+
 const CompanyStory = () => {
+  const { content, loading } = useWebsiteContent("about");
+
   return (
+    
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
@@ -9,15 +15,29 @@ const CompanyStory = () => {
 
           <div>
 
-            <div className="h-125 rounded-3xl bg-gray-300 flex items-center justify-center shadow-lg">
+  <div className="h-125 rounded-3xl overflow-hidden bg-gray-300 shadow-lg">
 
-              <span className="text-2xl font-semibold text-gray-500">
-                Dummy Company Image
-              </span>
+    {loading ? (
+      <div className="w-full h-full flex items-center justify-center">
+        <span className="text-gray-500">Loading...</span>
+      </div>
+    ) : content?.sections?.about?.image ? (
+      <img
+        src={content.sections.about.image}
+        alt="Company"
+        className="w-full h-full object-cover"
+      />
+    ) : (
+      <div className="w-full h-full flex items-center justify-center">
+        <span className="text-2xl font-semibold text-gray-500">
+          Company Image Not Found
+        </span>
+      </div>
+    )}
 
-            </div>
+  </div>
 
-          </div>
+</div>
 
           {/* Right Content */}
 

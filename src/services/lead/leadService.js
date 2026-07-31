@@ -1,8 +1,6 @@
 const API_URL = `${import.meta.env.VITE_API_URL}/leads` 
 
-// ==========================================
-// Create Lead (Public)
-// ==========================================
+
 
 export const createLead = async (leadData) => {
   try {
@@ -27,9 +25,7 @@ export const createLead = async (leadData) => {
   }
 };
 
-// ==========================================
-// Get All Leads
-// ==========================================
+
 
 export const getAllLeads = async () => {
   try {
@@ -51,9 +47,6 @@ export const getAllLeads = async () => {
   }
 };
 
-// ==========================================
-// Get Single Lead
-// ==========================================
 
 export const getSingleLead = async (id) => {
   try {
@@ -75,9 +68,6 @@ export const getSingleLead = async (id) => {
   }
 };
 
-// ==========================================
-// Update Lead Status
-// ==========================================
 
 export const updateLeadStatus = async (id, status) => {
   try {
@@ -103,9 +93,6 @@ export const updateLeadStatus = async (id, status) => {
   }
 };
 
-// ==========================================
-// Delete Lead
-// ==========================================
 
 export const deleteLead = async (id) => {
   try {

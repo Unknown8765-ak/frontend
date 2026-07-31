@@ -5,7 +5,7 @@ import {
   FaStar,
   FaEye,
 } from "react-icons/fa";
-
+import toast from "react-hot-toast";
 import { getDashboardData } from "../../../services/dashBoard/dashBoardSecvice";
 
 const StatsCard = () => {
@@ -21,7 +21,7 @@ const StatsCard = () => {
       setDashboard(response.data);
     } catch (error) {
       console.log(error);
-      alert(error.message);
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }

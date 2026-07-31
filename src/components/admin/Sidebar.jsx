@@ -28,6 +28,11 @@ import { NavLink } from "react-router-dom";
       icon: <FaGlobe />,
     },
     {
+      title: "BLog",
+      path: "/admin/blog",
+      icon: <FaGlobe />,
+    },
+    {
       title: "Leads",
       path: "/admin/leads",
       icon: <FaUsers />,
@@ -77,7 +82,7 @@ const handleLogout = async () => {
 
   } catch (error) {
     console.log(error);
-    alert(error.message);
+    toast.error(error.message);
   }
 };
 

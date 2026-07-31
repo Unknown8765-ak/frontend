@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const ProjectModal = ({
   isOpen,
@@ -28,7 +29,7 @@ const ProjectModal = ({
   const handleSave = () => {
 
     if (!title || !description || !image) {
-      return alert("All fields are required");
+      return toast.error("All fields are required");
     }
     if (!window.confirm("project save")) return;
 

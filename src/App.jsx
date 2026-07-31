@@ -5,7 +5,7 @@ import MainLayout from "./layouts/MainLayout";
 import AdminLayout from "./layouts/AdminLayout";
 
 // Authentication
-import AuthLoader from "./components/comman/AuthLoader";
+import AuthLoader from "./components/common/AuthLoader";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
 // Public Pages
@@ -15,21 +15,37 @@ import Solar from "./pages/Solar";
 import Aquarium from "./pages/Aqurium";
 import Agency from "./pages/Agency";
 import Blog from "./pages/Blog";
+import SingleBlog from "./pages/SingleBlog";
 import Contact from "./pages/Contact";
 
 // Admin Pages
 import Login from "./pages/admin/Login";
 import Dashboard from "./pages/admin/Dashboard";
 import Leads from "./pages/admin/Leads";
+import AdminBlog from "./pages/admin/AdminBlog";
 import Gallery from "./pages/admin/Gallery";
 import Testimonials from "./pages/admin/Testimonials";
 import Settings from "./pages/admin/Settings";
 import Profile from "./pages/admin/Profile";
 import WebsiteContent from "./pages/admin/WebsiteContent";
 
+import { Toaster } from "react-hot-toast";
+
 function App() {
   return (
     <BrowserRouter>
+
+     <Toaster
+    position="top-right"
+    reverseOrder={false}
+    toastOptions={{
+      duration: 3000,
+      style: {
+        borderRadius: "10px",
+      },
+    }}
+  />
+
       <AuthLoader>
         <Routes>
 
@@ -40,6 +56,7 @@ function App() {
             <Route path="/aquarium" element={<Aquarium />} />
             <Route path="/agency" element={<Agency />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<SingleBlog />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
            
@@ -61,6 +78,10 @@ function App() {
               <Route
                 path="/admin/website-content"
                 element= {<WebsiteContent />}
+              />
+              <Route
+                path="/admin/blog"
+                element= {<AdminBlog/>}
               />
 
               <Route

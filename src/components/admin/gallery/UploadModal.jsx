@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaTimes } from "react-icons/fa";
 import { uploadGalleryImage } from "../../../services/gallery/galleryService";
+import toast from "react-hot-toast";
 
 const UploadModal = ({ onClose, refreshGallery }) => {
   const {
@@ -28,7 +29,7 @@ const UploadModal = ({ onClose, refreshGallery }) => {
 
       const response = await uploadGalleryImage(formData);
 
-      alert(response.message);
+     toast.success(response.message);
 
       reset();
 
@@ -38,7 +39,7 @@ const UploadModal = ({ onClose, refreshGallery }) => {
 
     } catch (error) {
       console.log(error);
-      alert(error.message);
+        toast.error(response.message);
     } finally {
       setLoading(false);
     }

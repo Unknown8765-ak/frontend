@@ -3,6 +3,7 @@ import {
   getWebsiteContent,
   updateHeroImage,
 } from "../../../services/websiteContent/websiteContentService";
+import toast from "react-hot-toast";
 
 const HeroImageCard = ({ page, title }) => {
   const [image, setImage] = useState(null);
@@ -20,7 +21,7 @@ const HeroImageCard = ({ page, title }) => {
       setImage(null);
     } catch (error) {
       console.log(error);
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -39,7 +40,7 @@ const HeroImageCard = ({ page, title }) => {
 
   const handleUpload = async () => {
     if (!image) {
-      return alert("Please select an image");
+      return toast.error("Please select an image");
     }
 
     try {
@@ -48,15 +49,13 @@ const HeroImageCard = ({ page, title }) => {
       const formData = new FormData();
 
       formData.append("image", image);
-
       await updateHeroImage(page, formData);
-
-      alert("Hero image updated successfully");
+      toast.success("Hero Image Updated Successfully")
 
       fetchContent();
     } catch (error) {
       console.log(error);
-      alert(error.message);
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }

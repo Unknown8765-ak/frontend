@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaLock } from "react-icons/fa";
 
 import { changePassword } from "../../../services/profile/profileService";
+import toast from "react-hot-toast";
 
 const ChangePassword = () => {
   const [showCurrent, setShowCurrent] = useState(false);
@@ -29,13 +30,12 @@ const ChangePassword = () => {
         newPassword: data.newPassword,
       });
       console.log(response);
-      alert("Password Updated Successfully");
-
+        toast.success("Password Updated Successfully");
       reset();
 
     } catch (error) {
       console.log(error);
-      alert(error.message);
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }

@@ -40,7 +40,7 @@ const fetchSettings = async () => {
     });
   } catch (error) {
     console.log(error);
-    alert(error.message);
+    toast.error(error.message);
   }
 };
 
@@ -59,13 +59,11 @@ const onSubmit = async (data) => {
     formData.append("youtube", data.youtube);
 
     await updateSettings(formData);
-
-    alert("Social Links Updated Successfully");
-
+    toast.success("Social Media Updated Successfully");
     fetchSettings();
   } catch (error) {
     console.log(error);
-    alert(error.message);
+   toast.error(error.message);
   } finally {
     setLoading(false);
   }

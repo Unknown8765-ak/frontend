@@ -12,7 +12,7 @@ const ProfileCard = () => {
       setProfile(response.data);
     } catch (error) {
       console.log(error);
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 

@@ -5,6 +5,7 @@ import {
   getAllLeads,
   deleteLead,
 } from "../../../services/lead/leadService";
+import toast from "react-hot-toast";
 
 
 
@@ -22,7 +23,7 @@ const fetchLeads = async () => {
     setLeads(response.data);
   } catch (error) {
     console.log(error);
-    alert(error.message);
+    toast.error(error.message);
   } finally {
     setLoading(false);
   }
@@ -45,7 +46,7 @@ const handleDelete = async (id) => {
     fetchLeads();
   } catch (error) {
     console.log(error);
-    alert(error.message);
+        toast.error(error.message);
   }
 };
 

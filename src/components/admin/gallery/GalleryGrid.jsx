@@ -3,6 +3,7 @@ import UploadModal from "./UploadModal";
 import ImagePreview from "./ImagePreview";
 import { FaPlus } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 import {
   getAllGalleryImages,
@@ -25,7 +26,7 @@ const GalleryGrid = () => {
     setImages(response.data);
   } catch (error) {
     console.log(error);
-    alert(error.message);
+    toast.error(error.message);
   } finally {
     setLoading(false);
   }
@@ -44,7 +45,7 @@ const handleDelete = async (id) => {
     fetchGallery();
   } catch (error) {
     console.log(error);
-    alert(error.message);
+    toast.error(error.message);
   }
 };
 

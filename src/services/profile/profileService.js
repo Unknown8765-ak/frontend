@@ -1,9 +1,7 @@
 const API_URL = `${import.meta.env.VITE_API_URL}/profile` 
 
 
-// =============================
-// Get Profile
-// =============================
+
 export const getProfile = async () => {
   try {
     const response = await fetch(`${API_URL}`, {
@@ -25,9 +23,6 @@ export const getProfile = async () => {
 };
 
 
-// =============================
-// Update Profile
-// =============================
 export const updateProfile = async (formData) => {
   try {
     const response = await fetch(`${API}`, {
@@ -50,9 +45,6 @@ export const updateProfile = async (formData) => {
 };
 
 
-// =============================
-// Change Password
-// =============================
 export const changePassword = async (passwordData) => {
   try {
     const response = await fetch(`${API}/change-password`, {

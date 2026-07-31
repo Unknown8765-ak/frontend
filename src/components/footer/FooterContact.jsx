@@ -9,6 +9,8 @@ const FooterContact = () => {
 
 
         <p>+91 </p>
+        <p>+91 </p>
+        <p>+91 </p>
 
         <p>sunshadow.in@gmail.com</p>
 

@@ -1,14 +1,13 @@
-import useWebsiteContent from "../../services/websiteContent/useWebsiteContent";
+import useGallery from "../../services/gallery/useGallery";
 
 const Gallery = () => {
 
-  const { content, loading } = useWebsiteContent("aquarium");
+  const { gallery, loading } = useGallery("Aquarium");
 
   if (loading) {
     return <p>Loading...</p>;
   }
 
-  const gallery = content?.sections?.gallery || [];
 
   return (
     <section className="py-24 bg-slate-50">

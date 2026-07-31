@@ -7,6 +7,7 @@ import {
   addProject,
   deleteProject,
 } from "../../../services/websiteContent/websiteContentService";
+import toast from "react-hot-toast";
 
 const ProjectManager = () => {
   const [projects, setProjects] = useState([]);
@@ -22,7 +23,7 @@ const ProjectManager = () => {
       setProjects(response.data.sections.projects || []);
     } catch (error) {
       console.log(error);
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -40,78 +41,78 @@ const ProjectManager = () => {
 
     } catch (error) {
       console.log(error);
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 
   return (
     <>
-    <div className="bg-white rounded-xl shadow-md p-6">
+      <div className="bg-white rounded-xl shadow-md p-6">
 
-      <h2 className="text-2xl font-bold mb-6">
-        Agency Projects
-      </h2>
+        <h2 className="text-2xl font-bold mb-6">
+          Agency Projects
+        </h2>
 
-      <div className="space-y-4 mb-8">
+        <div className="space-y-4 mb-8">
 
-        
-      <button
-          onClick={() => setShowModal(true)}
-          className="bg-blue-600 text-white px-6 py-3 rounded-lg"
-      >
-          Add Project
-      </button>
 
-      </div>
+          <button
+            onClick={() => setShowModal(true)}
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg"
+          >
+            Add Project
+          </button>
 
-      {projects.length === 0 ? (
+        </div>
 
-      <div className="text-center py-10 text-gray-500 text-lg">
-        No Projects Found
-      </div>
+        {projects.length === 0 ? (
 
-) : (
+          <div className="text-center py-10 text-gray-500 text-lg">
+            No Projects Found
+          </div>
 
-  <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        ) : (
 
-    {projects.map((project) => (
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-      <ProjectCard
-        key={project._id}
-        project={project}
-        onDelete={() => handleDelete(project._id)}
-      />
+            {projects.map((project) => (
+
+              <ProjectCard
+                key={project._id}
+                project={project}
+                onDelete={() => handleDelete(project._id)}
+              />
 
             ))}
 
           </div>
 
-          )}
+        )}
 
-    </div>
-    <ProjectModal
-    isOpen={showModal}
-    onClose={() => setShowModal(false)}
-    loading={loading}
-    onSubmit={async (formData) => {
+      </div>
+      <ProjectModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        loading={loading}
+        onSubmit={async (formData) => {
 
-        try{
+          try {
 
             setLoading(true);
             await addProject(formData);
             fetchProjects();
             setShowModal(false);
-        }catch(error){
-            alert(error.message);
-        }finally{
+          } catch (error) {
+            toast.error(error.message);
+          } finally {
             setLoading(false);
-        }
+          }
 
-    }}
-/>
-  </>
+        }}
+      />
+    </>
   );
-  
+
 };
 
 export default ProjectManager;

@@ -50,18 +50,14 @@ export const updateHeroImage = async (
   }
 };
 
-// ======================================
-// Add Gallery Image
-// ======================================
 
-export const addGalleryImage = async (
-  formData
-) => {
+
+export const updateCompanyImage = async (page, formData) => {
   try {
     const response = await fetch(
-      `${API_URL}/aquarium/gallery`,
+      `${API_URL}/${page}/company-image`,
       {
-        method: "POST",
+        method: "PATCH",
         credentials: "include",
         body: formData,
       }
@@ -71,7 +67,7 @@ export const addGalleryImage = async (
 
     if (!response.ok) {
       throw new Error(
-        data.message || "Failed to upload image"
+        data.message || "Failed to update company image"
       );
     }
 
@@ -82,13 +78,10 @@ export const addGalleryImage = async (
   }
 };
 
-
-export const deleteGalleryImage = async (
-  imageId
-) => {
+export const deleteCompanyImage = async (page) => {
   try {
     const response = await fetch(
-      `${API_URL}/aquarium/gallery/${imageId}`,
+      `${API_URL}/${page}/company-image`,
       {
         method: "DELETE",
         credentials: "include",
@@ -99,7 +92,7 @@ export const deleteGalleryImage = async (
 
     if (!response.ok) {
       throw new Error(
-        data.message || "Failed to delete image"
+        data.message || "Failed to delete company image"
       );
     }
 

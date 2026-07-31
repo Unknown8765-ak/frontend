@@ -37,7 +37,7 @@ const fetchSettings = async () => {
     });
   } catch (error) {
     console.log(error);
-    alert(error.message);
+    toast.error(error.message);
   }
 };
 
@@ -60,13 +60,11 @@ useEffect(() => {
     formData.append("robots", data.robots);
 
     await updateSettings(formData);
-
-    alert("SEO Settings Updated Successfully");
-
+      toast.success("SEO Settings Updated Successfully");
     fetchSettings();
   } catch (error) {
     console.log(error);
-    alert(error.message);
+    toast.error(error.message);
   } finally {
     setLoading(false);
   }

@@ -5,6 +5,7 @@ import {
   getSettings,
   updateSettings,
 } from "../../../services/settings/settingsService";
+import { Toaster } from "react-hot-toast";
 
 const BrandingForm = () => {
   const [logoPreview, setLogoPreview] = useState("");
@@ -23,7 +24,7 @@ const BrandingForm = () => {
       setFaviconPreview(response.data.favicon || "");
     } catch (error) {
       console.log(error);
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -67,12 +68,11 @@ const BrandingForm = () => {
 
       await updateSettings(formData);
 
-      alert("Branding Updated Successfully");
-
+      toast.success("Branding Updated Successfully");
       fetchSettings();
     } catch (error) {
       console.log(error);
-      alert(error.message);
+     toast.error(error.message);
     } finally {
       setLoading(false);
     }
