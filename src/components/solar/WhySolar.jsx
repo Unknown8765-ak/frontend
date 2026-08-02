@@ -69,7 +69,7 @@ const WhySolar = () => {
 
                 {/* Image */}
 
-                <div className="mt-10 py-6">
+                <div className="mt-10 py-8">
 
                   <img
                     src={item.image}
