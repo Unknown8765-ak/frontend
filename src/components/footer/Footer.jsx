@@ -46,21 +46,13 @@ const Footer = () => {
 
         </div>
 
-        {/* Links */}
-
         <FooterLinks />
-
-        {/* Contact */}
-
         <FooterContact />
-
-        {/* Social */}
-
         <FooterSocial />
 
       </div>
 
-      {/* Bottom */}
+     
 
       <div className="border-t border-gray-700">
 

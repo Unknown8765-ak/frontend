@@ -8,11 +8,10 @@ const FooterContact = () => {
       <div className="space-y-3 text-gray-300">
 
 
-        <p>+91 </p>
-        <p>+91 </p>
-        <p>+91 </p>
+        <p>+91 96961 42030 </p>
+        <p>+91 81738 43164</p>
 
-        <p>sunshadow.in@gmail.com</p>
+        <p>info@sunandshadow.in</p>
 
       </div>
     </div>

@@ -75,7 +75,7 @@ const MobileMenu = ({ open, setOpen }) => {
           <div className="space-y-2 text-sm">
             <div className="flex items-center gap-2">
               <Phone size={16} />
-              <span>+91 XXXXX XXXXX</span>
+              <span>+91 96961 42030</span>
             </div>
 
             <div className="flex items-center gap-2">
