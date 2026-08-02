@@ -2,8 +2,8 @@ import { whySolar } from "./solarData";
 
 const WhySolar = () => {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
@@ -25,7 +25,7 @@ const WhySolar = () => {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid lg:grid-cols-12 gap-6 mt-20">
+        <div className="grid lg:grid-cols-12 gap-6 mt-16">
 
           {whySolar.map((item, index) => (
 
@@ -69,7 +69,7 @@ const WhySolar = () => {
 
                 {/* Image */}
 
-                <div className="mt-10 py-8">
+                <div className="mt-10 py-4">
 
                   <img
                     src={item.image}
@@ -84,14 +84,14 @@ const WhySolar = () => {
 
                       ${
                         index === 0
-                          ? "h-131"
+                          ? "h-160"
                           : index === 1
-                          ? "h-48"
+                          ? "h-65"
                           : index === 2
-                          ? "h-44"
+                          ? "h-55"
                           : index === 3
-                          ? "h-52"
-                          : "h-44"
+                          ? "h-70"
+                          : "h-55"
                       }
                     `}
                   />
