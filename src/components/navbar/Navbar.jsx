@@ -1,10 +1,22 @@
-// components/common/Navbar/Navbar.jsx
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -16,29 +28,29 @@ const Navbar = () => {
           <NavLinks />
         </div>
 
-        {/* CTA Button */}
-        {/* <button
-          className="
-            hidden
-            lg:block
-            bg-yellow-500
-            hover:bg-yellow-600
-            text-white
-            px-5
-            py-2
-            rounded-lg
-            transition-all
-          "
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden"
+          onClick={() => setOpen(!open)}
         >
-          Consult an Expert
-        </button> */}
-
-        {/* Mobile Menu */}
-        <div className="lg:hidden">
-          <MobileMenu />
-        </div>
+          {open ? <X size={28} /> : <Menu size={28} />}
+        </button>
 
       </nav>
+
+      {/* Overlay */}
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
+      {/* Mobile Menu */}
+      <MobileMenu
+        open={open}
+        setOpen={setOpen}
+      />
     </header>
   );
 };
