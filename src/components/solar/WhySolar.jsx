@@ -84,7 +84,7 @@ const WhySolar = () => {
 
                       ${
                         index === 0
-                          ? "h-72"
+                          ? "h-131"
                           : index === 1
                           ? "h-48"
                           : index === 2

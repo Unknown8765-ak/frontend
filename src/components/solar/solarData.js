@@ -6,6 +6,11 @@ import {
   FaIndustry,
   FaTools,
 } from "react-icons/fa";
+import rooftop from "../../images/solar/rooftop.jpg";
+import maintenance from "../../images/solar/maintenance.jpg";
+import subsidy from "../../images/solar/subsidy.jpg";
+import eco from "../../images/solar/eco.jpg";
+import solarhome from "../../images/solar/solar-home.jpg";
 
 export const services = [
   {
@@ -44,8 +49,8 @@ export const whySolar = [
     badge: "Electricity Savings",
     title: "Reduce your electricity bills by up to 80%",
     description:
-      "Generate your own clean energy and significantly lower your monthly electricity expenses.",
-    image: "/images/solar/solar-home.jpg",
+      "Generate your own clean and renewable energy while significantly reducing your monthly electricity expenses. Our advanced solar solutions are designed to maximize energy production, helping you save up to 80% on electricity bills. Enjoy uninterrupted power, greater energy independence, and protection from rising electricity costs. With premium-quality solar panels, expert installation, and minimal maintenance requirements, you can benefit from reliable performance for more than 25 years while contributing to a cleaner, greener, and more sustainable future for your family, your business, and the environment.",
+    image: solarhome,
     bg: "bg-blue-100",
     span: "lg:col-span-5 lg:row-span-2",
   },
@@ -56,7 +61,7 @@ export const whySolar = [
     title: "100% Clean & Renewable Energy",
     description:
       "Switch to eco-friendly solar power and reduce your carbon footprint.",
-    image: "/images/solar/eco.jpg",
+    image: eco,
     bg: "bg-green-100",
     span: "lg:col-span-4",
   },
@@ -67,7 +72,7 @@ export const whySolar = [
     title: "PM Surya Ghar Subsidy Available",
     description:
       "Take advantage of government incentives and reduce installation costs.",
-    image: "/images/solar/subsidy.jpg",
+    image: subsidy,
     bg: "bg-yellow-100",
     span: "lg:col-span-3",
   },
@@ -78,7 +83,7 @@ export const whySolar = [
     title: "Long Lasting Solar Panels",
     description:
       "Premium quality solar panels built to perform efficiently for decades.",
-    image: "/images/solar/rooftop.jpg",
+    image: rooftop,
     bg: "bg-pink-100",
     span: "lg:col-span-4",
   },
@@ -89,7 +94,7 @@ export const whySolar = [
     title: "Minimal Maintenance Required",
     description:
       "Our AMC plans ensure your system always performs at maximum efficiency.",
-    image: "/images/solar/maintenance.jpg",
+    image: maintenance,
     bg: "bg-purple-100",
     span: "lg:col-span-3",
   },
