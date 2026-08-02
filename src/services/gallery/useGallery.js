@@ -10,16 +10,10 @@ const useGallery = (category = "") => {
             setLoading(true);
 
             const response = await getAllGalleryImages();
+            console.log("response1",response.data.data)
+            console.log("response",response.data[0])
 
-            let images = response.data || [];
-
-            if (category) {
-                images = images.filter(
-                    (item) => item.category === category
-                );
-            }
-
-            setGallery(images);
+            setGallery(response.data ||[]);
 
         } catch (error) {
             console.error(error);
@@ -30,7 +24,7 @@ const useGallery = (category = "") => {
 
     useEffect(() => {
         fetchGallery();
-    }, [category]);
+    }, []);
 
     return {
         gallery,

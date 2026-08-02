@@ -6,7 +6,7 @@ import useWebsiteContent from "../../services/websiteContent/useWebsiteContent";
 
 
 const Hero = () => {
-      const { content, loading } = useWebsiteContent("home");
+      const { content, loading } = useWebsiteContent("solar");
 
   return (
     <section className="bg-linear-to-br from-slate-50 to-yellow-50 py-20 lg:py-28">

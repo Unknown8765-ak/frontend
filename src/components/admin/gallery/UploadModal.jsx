@@ -24,7 +24,7 @@ const UploadModal = ({ onClose, refreshGallery }) => {
       const formData = new FormData();
 
       formData.append("title", data.title);
-      formData.append("category", data.category);
+      // formData.append("category", data.category);
       formData.append("image", data.image[0]);
 
       const response = await uploadGalleryImage(formData);
@@ -39,7 +39,9 @@ const UploadModal = ({ onClose, refreshGallery }) => {
 
     } catch (error) {
       console.log(error);
-        toast.error(response.message);
+        toast.error(
+          error?.response?.data?.message || "Failed to upload image"
+        );
     } finally {
       setLoading(false);
     }
@@ -96,7 +98,7 @@ const UploadModal = ({ onClose, refreshGallery }) => {
 
           {/* Category */}
 
-          <div>
+          {/* <div>
 
             <label className="font-medium">
               Category
@@ -129,7 +131,7 @@ const UploadModal = ({ onClose, refreshGallery }) => {
               {errors.category?.message}
             </p>
 
-          </div>
+          </div> */}
 
           {/* Image */}
 
